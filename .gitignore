@@ -1,0 +1,10 @@
+# Intellij
+.idea/
+
+# Gradle
+/.gradle/
+/gradle/
+/build/
+/build/classes/java/main/
+gradlew
+gradlew.bat

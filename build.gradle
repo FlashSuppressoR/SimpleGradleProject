@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.flashsuppressor.java.lab'
+version '1.0-SNAPSHOT'
+
+ext {
+    javaMainClass = "com.flashsuppressor.java.lab.App"
+}
+
+application{
+    mainClassName = javaMainClass
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
+build {
+    if(project.hasProperty("dev")){
+            project.buildDir = 'build/dev'
+    }
+    if(project.hasProperty("stable")){
+        project.buildDir = 'build/stable'
+    }
+}
